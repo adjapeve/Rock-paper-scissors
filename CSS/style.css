@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selection{
+    display:flex;
+    flex-direction: column;
+    border: solid black;
+    border-radius: 50px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2em;
+    padding: 1em;
+}
+#result{
+    text-align: center;
+}

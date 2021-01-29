@@ -3,74 +3,24 @@
 <head>
   <title>Rock,Scissors,paper</title>
   <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
-  <script>
-    //get a random number between 0 and maxnumber
-    function getRandomnumber(maxnumber) {
-        return Math.floor(Math.random() * maxnumber)
-      }
-    //get a random play from array
-    function getComputerplay(){
-        let plays = ['rock', 'paper', 'scissors'];
-        return plays[getRandomnumber(plays.length)];
-    }
-    //function that gets the result of game person vs pc
-    function getWinner(userplay,pcplay){
-      if(userplay===pcplay){
-        return 'It`s a tie'
-      }
-      else if(userplay==='rock'&&pcplay==='scissors'){
-        return 'You win, rock beats scissors';
-      }
-      else if(userplay==='rock'&&pcplay==='paper'){
-        return 'You lose, paper beats rock';
-      }
-      else if(userplay==='scissors'&&pcplay==='rock'){
-        return 'You lose, rock beats scissors';
-      }
-      else if(userplay==='scissors'&&pcplay==='paper'){
-        return 'You win, scissors beats paper';
-      }
-      else if(userplay==='paper'&&pcplay==='rock'){
-        return 'You win, paper beats rock';
-      }
-      else if(userplay==='paper'&&pcplay==='scissors'){
-        return 'You lose, scissors beat paper';
-      } 
-    }
-    function game(){
-      //start some loop up to 5 and start win count to validate who is the winner at the end
-      let wincount=0;
-      let losecount=0;
-      for(i=0;i<=4;i++){
-        //ask play to user and make it lowercase
-        const userplay = prompt('make your play', 'scissors').toLowerCase();
-        //get computer play
-        const pcplay = getComputerplay();
-        let roundresult = getWinner(userplay, pcplay);
-        console.log(roundresult);
-        //every time the user wins count 1 and show score at the end
-        if (roundresult.includes('win')) {
-          wincount++;
-        }else if(roundresult.includes('lose')){
-          losecount++;
-        }
-      }
-      //call results function and console.log it
-      console.log(getResults(wincount,losecount));
-    }
-    //create a function to validate winner if wins are > than loses user won, otherwise they lost, if equal then tie
-    function getResults(wincount,losecount){
-      if(wincount>losecount){
-        return `Final result:You won ${wincount} - ${losecount}`;
-      }else if(wincount<losecount){
-        return `Final result:You lost ${wincount} - ${losecount}`;
-      }else 
-        return `Final result:It's a tie ${wincount} - ${losecount}`;
-    }
-    //start the game
-    game();
-  </script>
+<body><div id="result">
+  <div id="wrapper" class="container">
+    <div class="selection">
+      <img src="IMG/rock.png" alt="Image of rock" >
+      <button value="rock">Play Rock</button>
+    </div>
+    <div class="selection">
+      <img src="IMG/scissors.png" alt="Image of scissors" >
+      <button value="scissors">Play Scissors</button>
+    </div>
+    <div class="selection">
+      <img src="IMG/paper.png" alt="Image of paper" >
+      <button value="paper">Play Paper</button>
+    </div>
+  </div>
+</div>
+  <script src="JS/script.js"></script>
 </body>
 </html>
