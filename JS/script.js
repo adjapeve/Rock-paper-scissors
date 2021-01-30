@@ -35,11 +35,11 @@ function getWinner(userplay, pcplay) {
 //create a function to validate winner if wins are > than loses user won, otherwise they lost, if equal then tie
 function getResults(wincount, losecount, tiecounter) {
     if (wincount > losecount) {
-        return `Final result : You won ${wincount} - ${losecount} and ${tieCounter} tie(s) pdta = Te amo Pandita`;
+        return `Final result : You won ${wincount} - ${losecount} and ${tieCounter} tie(s)`;
     } else if (wincount < losecount) {
-        return `Final result : You lost ${wincount} - ${losecount} and ${tieCounter} tie(s) pdta = Te amo Pandita`;
+        return `Final result : You lost ${wincount} - ${losecount} and ${tieCounter} tie(s)`;
     } else
-        return `Final result : Tie ${wincount} - ${losecount} and ${tieCounter} tie(s) pdta = te amo Pandita`;
+        return `Final result : Tie ${wincount} - ${losecount} and ${tieCounter} tie(s)`;
 }
 
 function printResult(roundResult) {
